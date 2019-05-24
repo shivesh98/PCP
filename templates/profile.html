@@ -6,12 +6,14 @@
     	<h1 align="center"><strong>Welcome {{ name }}</strong></h1>
     </div>
     <center>
-    <div>
     	<div align="center">
-        <a href="../doctor"><button type="button" class="btn btn-dark btn-lg" style="margin: 70px"><strong>DOCTOR</strong></button></a>
-        <a href="../analyze"><button type="button" class="btn btn-dark btn-lg" style="margin: 70px"><strong>ANALYZE</strong></button></a>
-    </div>
-</div>
+           <form id="search-form" action="/analyze" method="post" style="position: relative;top: 110px;">
+                <input type="text" id="email" class="form-control" name="email" style="width: 300px;"  placeholder="example@abc.com">
+                <div align="center">
+                    <button type="submit" class="btn btn-primary btn-lg"><strong>Search</strong></button>
+                </div>
+        </form>
+        </div>
     </center>
     <div align="center">
         

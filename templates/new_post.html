@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<a href="/login"><button type="button" class="btn btn-outline-dark btn-lg" style="position: absolute;top: 10px;right: 30px"><strong>Log out</strong></button></a>
+<body background="https://backgroundcheckall.com/wp-content/uploads/2017/12/old-paper-background-hd-1.jpg" style="background-size: 100%">
+    <div class="container">
+	    <form id="new-post" action="/posts/new/{{ chart_id }}" method="post">
+		    <div class="form-group">
+			    <label for="title">Title</label>
+			    <input type="text" id="title" class="form-control" name="title">
+		    </div>
+		    <div class="form-group">
+			    <label for="content">Content</label>
+                <textarea id="content" class="form-control" name="content"></textarea>
+		    </div>
+
+	    	<button type="submit" class="btn btn-primary">Publish</button>
+	    </form>
+    </div>
+</body>
+{% endblock %}

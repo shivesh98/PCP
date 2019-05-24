@@ -51,15 +51,23 @@ class User(object):
     def logout():
         session['email'] = None
 
-    def get_analyze(self):
+    def get_chart(self):
         return Chart.find_by_author_id(self._id)
 
-    def new_analyze(self, description):
+    def new_analyze(self, title, description):
         analyze = Chart(name=self.name,
                     author=self.email,
+                    title=self.title,
                     description=description,
                     author_id=self._id)
         analyze.save_to_mongo()
+
+    @staticmethod
+    def new_post(chart_id, title, content, date=datetime.datetime.utcnow()):
+        chart = Chart.from_mongo(chart_id)
+        chart.new_post(title=title,
+                    content=content,
+                    date=date)
 
     def json(self):
         return {

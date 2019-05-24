@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<a href="/login"><button type="button" class="btn btn-outline-dark btn-lg" style="position: absolute;top: 10px;right: 30px"><strong>Log out</strong></button></a>
+<body background="https://backgroundcheckall.com/wp-content/uploads/2017/12/old-paper-background-hd-1.jpg" style="background-size: 100%">
+    <div class="container">
+
+	    <h2><strong>Chart Title: {{ chart_title }}</strong></h2>
+        <hr style="height:4px;border:none;color:#F3600D;background-color:#F3600D;" />
+        <h3>Create new post</h3>
+        <a href="/posts/new/{{ chart_id }}"><button class="btn btn-primary">New post</button></a>
+        <hr style="height:4px;border:none;color:#F3600D;background-color:#F3600D;" />
+        {% if posts|length > 0 %}
+	        {% for post in posts %}
+		        <h3><strong>Post Title:</strong> {{ post.title }}</h3>
+		        <p><strong>Content: {{ post.content }}</strong></p>
+                <p><strong>Author - {{ post.name }}</strong></p>
+		        <hr style="height:1px;border:none;color:#333;background-color:#333;"/>
+	        {% endfor %}
+        {% else %}
+            <h4>There aren't any posts yet!</h4>
+        {% endif %}
+    </div>
+</body>
+{% endblock %}
