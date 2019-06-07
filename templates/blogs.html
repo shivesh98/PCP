@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blogs</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
+    <div class="container"> <a class="navbar-brand" href="#">
+        <b style="" class="text-dark"><b><i>PCP</i></b></b>
+      </a> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar16">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar16">
+        <ul class="navbar-nav ml-auto"></ul> <a class="btn navbar-btn ml-md-2 text-dark btn-primary" href="/auth/login" method="post"><b><b>Dashboard</b></b></a><a class="btn navbar-btn ml-md-2 text-dark btn-primary" href="/blog/new"><b><b>New Blog</b></b></a><a class="btn navbar-btn ml-md-2 text-dark btn-primary" href="/survey"><b><b>Survey Form</b></b></a><a class="btn navbar-btn ml-md-2 text-dark btn-primary" href="/login"><b><b>Log Out</b></b></a>
+      </div>
+    </div>
+  </nav>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-12 col-4 col-sm-9 text-dark" style="">
+          <h1 class=""><b><i>{{ name }}'s Blogs</i></b></h1>
+          <hr class="text-dark" style="height:2.5px;border:none;color:#333;background-color:#333;">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          {% for chart in charts %}
+            <h2 class=""><b><a href="/posts/{{ chart._id }}">{{ chart.title }}</a></b></h2>
+            <p><strong>{{ chart.description }}</strong></p>
+            <hr class="text-dark" style="height:1px;border:none;color:#333;background-color:#333;">
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+</body>
+
+</html>

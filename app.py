@@ -24,7 +24,7 @@ def home():
 
 @app.route('/login')
 def login_template():
-	return render_template('new_login.html')
+	return render_template('login.html')
 
 
 @app.route('/register')
@@ -70,8 +70,8 @@ def register_user():
 	return render_template("profile.html", email=session['email'], name=name)
 
 
-@app.route('/charts/<string:user_id>')
-@app.route('/charts')
+@app.route('/blogs/<string:user_id>')
+@app.route('/blogs')
 def user_chart(user_id=None):
 	if user_id is not None:
 		user = User.get_by_id(user_id)
@@ -80,13 +80,13 @@ def user_chart(user_id=None):
 
 	charts = user.get_chart()
 
-	return render_template("user_chart.html", charts=charts, email=user.email, name=user.name)
+	return render_template("blogs.html", charts=charts, email=user.email, name=user.name)
 
 
-@app.route('/chart/new', methods=['POST', 'GET'])
+@app.route('/blog/new', methods=['POST', 'GET'])
 def create_new_chart():
 	if request.method == 'GET':
-		return render_template("new_chart.html")
+		return render_template("new_blogs.html")
 	else:
 		title = request.form['title']
 		description = request.form['description']

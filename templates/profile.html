@@ -1,22 +1,54 @@
-{% extends "base.html" %}
-{% block content %}
-<a href="/login"><button type="button" class="btn btn-dark btn-lg" style="position: absolute;top: 10px;right: 30px"><strong>Log out</strong></button></a>
-<body background="https://ak6.picdn.net/shutterstock/videos/28491496/thumb/1.jpg" style="background-size: 100%">
-	<div>
-    	<h1 align="center"><strong>Welcome {{ name }}</strong></h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
+    <div class="container"> <a class="navbar-brand" href="#">
+        <b class="text-dark"><b><i> PCP</i></b></b>
+      </a> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar16">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar16">
+        <ul class="navbar-nav ml-auto"></ul> <a class="btn navbar-btn ml-md-2 text-dark btn-primary" href="/update"><b><b>Update Profile</b></b></a><a class="btn navbar-btn ml-md-2 text-dark btn-primary" href="/blogs"><b><b>Blogs</b></b></a><a class="btn navbar-btn ml-md-2 text-dark btn-primary" href="/login"><b><b>Log Out</b></b></a>
+      </div>
     </div>
-    <center>
-    	<div align="center">
-           <form id="search-form" action="/analyze" method="post" style="position: relative;top: 110px;">
-                <input type="text" id="email" class="form-control" name="email" style="width: 300px;"  placeholder="example@abc.com">
-                <div align="center">
-                    <button type="submit" class="btn btn-primary btn-lg"><strong>Search</strong></button>
-                </div>
-        </form>
+  </nav>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12"></div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 order-2 order-lg-1 p-0"> <img class="img-fluid d-block" src="https://static.pingendo.com/cover-moon.svg"> </div>
+        <div class="px-5 col-lg-6 d-flex flex-column align-items-start justify-content-center order-1 order-lg-2">
+          <h1 style=""><b><b>Welcome</b>, <i>{{ name }}</i></b></h1>
         </div>
-    </center>
-    <div align="center">
-        
+      </div>
     </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12"></div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
-{% endblock %}
+
+</html>
