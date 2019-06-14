@@ -149,5 +149,5 @@ def sentiment(chart_id):
 
 	return render_template("chart.html", values=values, labels=labels)
 
-if __name__ == '__main__':
-	app.run(debug=True)
+#if __name__ == '__main__':
+#	app.run(debug=True)
