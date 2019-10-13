@@ -148,6 +148,3 @@ def sentiment(chart_id):
 	labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
 	return render_template("chart.html", values=values, labels=labels)
-
-#if __name__ == '__main__':
-#	app.run(debug=True)
